@@ -1,0 +1,221 @@
+/* 색 팔레트: 몽글 · 화이트 · 아이보리 · 하늘색 */
+:root {
+    --bg: #f9f7f3;          /* 아이보리 */
+    --bg-alt: #ffffff;      /* 순백색 */
+    --text: #333333;        /* 진회색 */
+    --subtext: #555555;     /* 약간 밝은 글자 */
+    --accent: #b5d8f7;      /* 포근한 하늘색 */
+    --accent-dark: #8fc5f3; /* 진한 하늘색 */
+    --card-bg: #ffffff;     /* 카드 흰색 */
+    --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+    --radius-lg: 22px;      /* 몽글몽글 라운드 */
+}
+
+/* 부드러운 스크롤 */
+html { scroll-behavior: smooth; }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* 공통 레이아웃 */
+.section {
+    padding: 80px 16px;
+}
+
+.section-alt {
+    background: var(--bg-alt);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    letter-spacing: 0.02em;
+}
+
+h2 {
+    font-size: 1.9rem;
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.7;
+    font-size: 1rem;
+    color: var(--subtext);
+}
+
+/* Hero 영역 */
+.hero {
+    min-height: 100vh;            /* 화면 높이 전체 */
+    padding: 60px 16px 40px;
+    display: flex;
+    align-items: center;          /* 세로 가운데 정렬 */
+    justify-content: center;      /* 가로 가운데 정렬 */
+    text-align: center;
+    background: var(--bg);        /* 배경은 기존 아이보리 */
+}
+
+.hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.avatar {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 4px solid var(--accent);
+    box-shadow: 0 8px 15px rgba(181, 216, 247, 0.4);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.tagline {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 22px;
+}
+
+/* 버튼 */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 999px;
+    border: none;
+    background: var(--accent);
+    color: #1d1d1d;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: 0.15s ease;
+    box-shadow: 0 6px 15px rgba(181,216,247,0.4);
+}
+
+.btn.primary {
+    background: var(--accent-dark);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(181,216,247,0.45);
+}
+
+.btn.wide {
+    width: 100%;
+    justify-content: center;
+}
+
+/* 카드 그리드 */
+.card-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: 22px 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: 0.15s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #222;
+}
+
+.card p {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+/* 링크 버튼 묶음 */
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+/* Contact */
+.contact-info {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Footer */
+.footer {
+    padding: 25px 16px 35px;
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+/* 반응형 */
+@media (min-width: 768px) {
+    .hero {
+        padding-top: 120px;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .section {
+        padding: 100px 16px;
+    }
+}
+
+/* 여러 페이지 공통 레이아웃 */
+.page {
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+.page-header {
+    padding: 20px 16px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Home으로 돌아가는 버튼 */
+.back-btn {
+    font-size: 0.85rem;
+    padding: 8px 14px;
+    box-shadow: 0 4px 10px rgba(181,216,247,0.3);
+}
