@@ -37,52 +37,42 @@
     font-weight: 800;
 }
 
-body {
-    font-family: "AstaSans", sans-serif;
-}
-
-
-/* 색 팔레트 */
+/* -----------------------------------
+   기본 설정 & 색 팔레트
+------------------------------------ */
 :root {
-    --bg: #f9f7f3;  
-    --bg-alt: #ffffff;  
+    --bg: #f9f7f3;
+    --bg-alt: #ffffff;
     --text: #333;
     --subtext: #555;
     --accent: #b5d8f7;
     --accent-dark: #8fc5f3;
     --card-bg: #ffffff;
-    --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
+    --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
     --radius-lg: 22px;
 }
 
 /* 부드러운 스크롤 */
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+}
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
+    font-family: "AstaSans", sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
 }
 
-/* -------------------------
-   Top Navigation Bar (알약 버튼)
--------------------------- */
-
-.page-nav {
-    display: flex;
-    gap: 12px;
-    margin: 20px 16px 0;
-}
-
-.page-nav .btn {
-    box-shadow: 0 6px 15px rgba(181,216,247,0.4);
-}
-
-/* -------------------------
-   Hero 영역 (index 전용)
--------------------------- */
+/* -----------------------------------
+   Hero 영역 (메인 index 전용)
+------------------------------------ */
 
 .hero {
     min-height: 100vh;
@@ -93,15 +83,19 @@ body {
     text-align: center;
 }
 
-.hero-inner { max-width: 900px; }
+.hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
 .avatar {
-    width: 130px; height: 130px;
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
     border: 4px solid var(--accent);
-    box-shadow: 0 8px 15px rgba(181,216,247,0.4);
+    box-shadow: 0 8px 15px rgba(181, 216, 247, 0.4);
 }
 
 .hero h1 {
@@ -112,8 +106,19 @@ body {
 
 .tagline {
     font-size: 1rem;
-    opacity: 0.85;
-    margin-bottom: 25px;
+    opacity: 0.88;
+    margin-bottom: 26px;
+}
+
+/* -----------------------------------
+   상단 페이지 네비 (알약 버튼)
+------------------------------------ */
+
+.page-nav {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px;
+    justify-content: center;
 }
 
 /* 버튼 스타일 */
@@ -129,7 +134,8 @@ body {
     text-decoration: none;
     font-size: 0.95rem;
     cursor: pointer;
-    transition: 0.15s ease;
+    transition: all 0.25s ease;
+    box-shadow: 0 6px 15px rgba(181, 216, 247, 0.4);
 }
 
 .btn.primary {
@@ -137,20 +143,23 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(181,216,247,0.45);
+    transform: scale(1.06) translateY(-3px);
+    background: var(--accent-dark);
+    box-shadow:
+        0 12px 30px rgba(181, 216, 247, 0.55),
+        0 0 10px rgba(181, 216, 247, 0.45);
 }
 
-/* -------------------------
-   공통 페이지 스타일
--------------------------- */
+/* -----------------------------------
+   공통 페이지 레이아웃
+------------------------------------ */
 
 .page {
     min-height: 100vh;
 }
 
 .page-header {
-    max-width: 750px;
+    max-width: 750px; /* 컨테이너와 정렬 맞추기 */
     margin: 0 auto;
     padding-top: 20px;
 }
@@ -182,9 +191,9 @@ p {
     color: #444;
 }
 
-/* -------------------------
-   Projects Cards
--------------------------- */
+/* -----------------------------------
+   Projects 카드 레이아웃
+------------------------------------ */
 
 .card-grid {
     display: grid;
@@ -199,19 +208,7 @@ p {
     box-shadow: var(--shadow-soft);
 }
 
-.link-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 12px;
-}
-
-.link-buttons .btn {
-    width: 100%;
-    justify-content: center;
-}
-
-/* 프로젝트 카드 - 텍스트 + 이미지 나란히 */
+/* 크리스마스 프로젝트: 텍스트 + 작은 이미지 */
 .project-card {
     display: flex;
     justify-content: space-between;
@@ -219,19 +216,18 @@ p {
     gap: 24px;
 }
 
-/* 텍스트 영역 */
 .project-info {
     flex: 1;
 }
 
-/* 오른쪽 썸네일 스타일 */
+/* 오른쪽 썸네일 (작게) */
 .project-thumb {
-    width: 150px;
-    height: 150px;
-    border-radius: 14px;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
-    border: 2px solid rgba(0,0,0,0.1);
+    border: 2px solid rgba(0, 0, 0, 0.1);
     background: #fff;
     display: flex;
     align-items: center;
@@ -244,12 +240,119 @@ p {
     object-fit: cover;
 }
 
-/* -------------------------
+/* -----------------------------------
+   Links 페이지 버튼
+------------------------------------ */
+
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.link-buttons .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* -----------------------------------
+   메인: 크리스마스 프로젝트 원형 카드 (pill)
+------------------------------------ */
+
+.project-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 12px 18px;
+    border-radius: 999px;
+    background: #ffffffee;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s ease;
+}
+
+.project-pill:hover {
+    transform: translateY(-3px);
+    background: #f1f7ff;
+    box-shadow: 0 12px 30px rgba(181, 216, 247, 0.3);
+}
+
+.pill-thumb {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(181, 216, 247, 0.8);
+}
+
+.pill-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pill-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pill-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.pill-desc {
+    font-size: 0.78rem;
+    color: #666;
+}
+
+/* -----------------------------------
+   Contact 페이지용
+------------------------------------ */
+
+.contact-info {
+    margin-top: 10px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* -----------------------------------
    Footer
--------------------------- */
+------------------------------------ */
+
 .footer {
     text-align: center;
     padding: 20px 0 40px;
     font-size: 0.85rem;
     opacity: 0.7;
+}
+
+/* -----------------------------------
+   반응형 (모바일 대응)
+------------------------------------ */
+
+@media (max-width: 600px) {
+    .project-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .project-thumb {
+        width: 60px;
+        height: 60px;
+    }
+
+    .page-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .project-pill {
+        width: 100%;
+        justify-content: flex-start;
+    }
 }
