@@ -7,43 +7,41 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <main class="page">
-        <div class="page-header">
-            <a href="index.html" class="btn back-btn">← Home</a>
+<main class="page">
+    <div class="page-header">
+        <div class="page-nav">
+            <a href="index.html" class="btn">Home</a>
+            <a href="about.html" class="btn">About Me</a>
+            <a href="projects.html" class="btn primary">Projects</a>
+            <a href="links.html" class="btn">Links</a>
+            <a href="contact.html" class="btn">Contact</a>
         </div>
+    </div>
 
-        <section class="section section-alt">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="card-grid">
-                    <article class="card">
-                        <h3>포트폴리오 랜딩 페이지</h3>
-                        <p>
-                            HTML/CSS만으로 만든 나만의 원페이지 사이트.  
-                            섹션 구조, 카드 레이아웃, 반응형까지 연습용으로 구현.
-                        </p>
-                    </article>
-                    <article class="card">
-                        <h3>데이터 시각화 미니 프로젝트</h3>
-                        <p>
-                            간단한 데이터셋을 가지고 차트/그래프로 표현해 보는 페이지.  
-                            '데이터 + 프론트엔드'를 연결하는 연습용 프로젝트.
-                        </p>
-                    </article>
-                    <article class="card">
-                        <h3>프론트엔드 연습 기록</h3>
-                        <p>
-                            Flexbox, Grid, 반응형 레이아웃, 버튼/카드 디자인 등  
-                            매일 하나씩 따라 만들기·클론 코딩을 정리하는 공간.
-                        </p>
-                    </article>
+    <section class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="card project-card">
+                <div class="project-info">
+                    <h3>크리스마스 메시지 웹페이지</h3>
+                    <p>
+                        간단한 HTML/CSS로 만든 인터랙티브 크리스마스 레터 페이지입니다.<br />
+                        사용자가 메시지를 입력하면 감성적인 편지 형태로 보여주는 작은 웹 프로젝트입니다.
+                    </p>
+            
+                    <a href="https://christmas-letter.pages.dev/" target="_blank" class="btn" style="margin-top: 12px;">
+                        프로젝트 보기 →
+                    </a>
+                </div>
+            
+                <div class="project-thumb">
+                    <img src="letter.jpg" alt="크리스마스 편지 썸네일" />
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+</main>
 
-    <footer class="footer">
-        <p>© 2025 Sonae Son. All rights reserved.</p>
-    </footer>
+<footer class="footer">© 2025 Sonae Son. All rights reserved.</footer>
 </body>
 </html>

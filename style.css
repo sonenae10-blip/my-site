@@ -1,121 +1,135 @@
-/* 색 팔레트: 몽글 · 화이트 · 아이보리 · 하늘색 */
+/* -----------------------------------
+   Asta Sans Font Family
+------------------------------------ */
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "AstaSans";
+    src: url("./static/AstaSans-ExtraBold.ttf") format("truetype");
+    font-weight: 800;
+}
+
+body {
+    font-family: "AstaSans", sans-serif;
+}
+
+
+/* 색 팔레트 */
 :root {
-    --bg: #f9f7f3;          /* 아이보리 */
-    --bg-alt: #ffffff;      /* 순백색 */
-    --text: #333333;        /* 진회색 */
-    --subtext: #555555;     /* 약간 밝은 글자 */
-    --accent: #b5d8f7;      /* 포근한 하늘색 */
-    --accent-dark: #8fc5f3; /* 진한 하늘색 */
-    --card-bg: #ffffff;     /* 카드 흰색 */
+    --bg: #f9f7f3;  
+    --bg-alt: #ffffff;  
+    --text: #333;
+    --subtext: #555;
+    --accent: #b5d8f7;
+    --accent-dark: #8fc5f3;
+    --card-bg: #ffffff;
     --shadow-soft: 0 10px 25px rgba(0,0,0,0.08);
-    --radius-lg: 22px;      /* 몽글몽글 라운드 */
+    --radius-lg: 22px;
 }
 
 /* 부드러운 스크롤 */
 html { scroll-behavior: smooth; }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
 }
 
-/* 공통 레이아웃 */
-.section {
-    padding: 80px 16px;
-}
+/* -------------------------
+   Top Navigation Bar (알약 버튼)
+-------------------------- */
 
-.section-alt {
-    background: var(--bg-alt);
-}
-
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-h1, h2, h3 {
-    letter-spacing: 0.02em;
-}
-
-h2 {
-    font-size: 1.9rem;
-    margin-bottom: 22px;
-    font-weight: 600;
-}
-
-p {
-    line-height: 1.7;
-    font-size: 1rem;
-    color: var(--subtext);
-}
-
-/* Hero 영역 */
-.hero {
-    min-height: 100vh;            /* 화면 높이 전체 */
-    padding: 60px 16px 40px;
+.page-nav {
     display: flex;
-    align-items: center;          /* 세로 가운데 정렬 */
-    justify-content: center;      /* 가로 가운데 정렬 */
-    text-align: center;
-    background: var(--bg);        /* 배경은 기존 아이보리 */
+    gap: 12px;
+    margin: 20px 16px 0;
 }
 
-.hero-inner {
-    max-width: 900px;
-    margin: 0 auto;
+.page-nav .btn {
+    box-shadow: 0 6px 15px rgba(181,216,247,0.4);
 }
+
+/* -------------------------
+   Hero 영역 (index 전용)
+-------------------------- */
+
+.hero {
+    min-height: 100vh;
+    padding: 60px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-inner { max-width: 900px; }
 
 .avatar {
-    width: 130px;
-    height: 130px;
+    width: 130px; height: 130px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
     border: 4px solid var(--accent);
-    box-shadow: 0 8px 15px rgba(181, 216, 247, 0.4);
+    box-shadow: 0 8px 15px rgba(181,216,247,0.4);
 }
 
 .hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
+    font-size: 2.6rem;
     font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .tagline {
     font-size: 1rem;
-    opacity: 0.8;
-    margin-bottom: 22px;
+    opacity: 0.85;
+    margin-bottom: 25px;
 }
 
-/* 버튼 */
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
+/* 버튼 스타일 */
 .btn {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    padding: 12px 20px;
+    align-items: center;
+    padding: 12px 22px;
     border-radius: 999px;
-    border: none;
     background: var(--accent);
+    border: none;
     color: #1d1d1d;
     text-decoration: none;
     font-size: 0.95rem;
     cursor: pointer;
     transition: 0.15s ease;
-    box-shadow: 0 6px 15px rgba(181,216,247,0.4);
 }
 
 .btn.primary {
@@ -127,12 +141,51 @@ p {
     box-shadow: 0 10px 22px rgba(181,216,247,0.45);
 }
 
-.btn.wide {
-    width: 100%;
+/* -------------------------
+   공통 페이지 스타일
+-------------------------- */
+
+.page {
+    min-height: 100vh;
+}
+
+.page-header {
+    max-width: 750px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.section {
+    padding: 60px 16px;
+    display: flex;
     justify-content: center;
 }
 
-/* 카드 그리드 */
+.container {
+    background: #ffffff;
+    max-width: 750px;
+    width: 100%;
+    padding: 40px 35px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #444;
+}
+
+/* -------------------------
+   Projects Cards
+-------------------------- */
+
 .card-grid {
     display: grid;
     gap: 20px;
@@ -144,28 +197,8 @@ p {
     border-radius: var(--radius-lg);
     padding: 22px 24px;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(0,0,0,0.03);
-    transition: 0.15s ease;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-    font-weight: 600;
-    color: #222;
-}
-
-.card p {
-    font-size: 0.95rem;
-    opacity: 0.9;
-}
-
-/* 링크 버튼 묶음 */
 .link-buttons {
     display: flex;
     flex-direction: column;
@@ -173,49 +206,50 @@ p {
     margin-top: 12px;
 }
 
-/* Contact */
-.contact-info {
-    margin-top: 10px;
-    font-weight: 600;
-    color: #444;
+.link-buttons .btn {
+    width: 100%;
+    justify-content: center;
 }
 
-/* Footer */
+/* 프로젝트 카드 - 텍스트 + 이미지 나란히 */
+.project-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+/* 텍스트 영역 */
+.project-info {
+    flex: 1;
+}
+
+/* 오른쪽 썸네일 스타일 */
+.project-thumb {
+    width: 150px;
+    height: 150px;
+    border-radius: 14px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid rgba(0,0,0,0.1);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* -------------------------
+   Footer
+-------------------------- */
 .footer {
-    padding: 25px 16px 35px;
     text-align: center;
+    padding: 20px 0 40px;
     font-size: 0.85rem;
     opacity: 0.7;
-}
-
-/* 반응형 */
-@media (min-width: 768px) {
-    .hero {
-        padding-top: 120px;
-    }
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-    .section {
-        padding: 100px 16px;
-    }
-}
-
-/* 여러 페이지 공통 레이아웃 */
-.page {
-    min-height: 100vh;
-    background: var(--bg);
-}
-
-.page-header {
-    padding: 20px 16px 0;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-/* Home으로 돌아가는 버튼 */
-.back-btn {
-    font-size: 0.85rem;
-    padding: 8px 14px;
-    box-shadow: 0 4px 10px rgba(181,216,247,0.3);
 }
