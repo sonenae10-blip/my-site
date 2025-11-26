@@ -222,8 +222,8 @@ p {
 
 /* 오른쪽 썸네일 (작게) */
 .project-thumb {
-    width: 60px;
-    height: 60px;
+    width: 150px;
+    height: 150px;
     border-radius: 12px;
     overflow: hidden;
     flex-shrink: 0;
