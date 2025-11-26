@@ -336,12 +336,15 @@ p {
 @media (max-width: 600px) {
     .project-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* 중앙 정렬 */
+        text-align: center; /* 텍스트도 중앙 */
+        gap: 20px;
     }
 
     .project-thumb {
-        width: 150px;
-        height: 150px;
+        width: 190px;   /* 모바일에서 크게 */
+        height: 190px;
+        border-radius: 18px;
     }
 
     .page-nav {
