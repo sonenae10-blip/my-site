@@ -143,11 +143,9 @@ body {
 }
 
 .btn:hover {
-    transform: scale(1.06) translateY(-3px);
-    background: var(--accent-dark);
-    box-shadow:
-        0 12px 30px rgba(181, 216, 247, 0.55),
-        0 0 10px rgba(181, 216, 247, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(181,216,247,0.45);
+    background-color: #8fc5f3;
 }
 
 /* -----------------------------------
